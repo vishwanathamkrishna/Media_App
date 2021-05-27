@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="card col-md-2">
+        <img class="card-img-top" src='../images/weather-icon.png' alt="weather" />
+        <span>
+            <h1 class= "text-center">
+                <%=weather.city%>
+            </h1>
+        </span>
+    </div>
+    
+        <div class="card col-md-2">
+
+            <div class="card-body">
+                <span class="topTemp text-primary">
+                    <h1>
+                        <%=weather.temperature%>°C
+                    </h1>
+                </span>
+                <span class="max ">
+                    <%=weather.temp_max%>
+                </span> /
+                <span class="min">
+                    <%=weather.temp_min%>°C
+                </span>
+                <h4 class="card-title">
+                    <%=weather.description%>
+                </h4>
+            </div>
+        </div>
+</div>
