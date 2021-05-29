@@ -24,19 +24,8 @@ app.set('views', ['./views/pages','./views/adminView']);
 app.use('/dataNews',dataNews);
 app.use('/sports' , sports);
 
-// app.use(session({
-//   secret: 'edurekaSecret',
-//   resave: false,
-//   saveUninitialized: true
-// }));
 
 let sess;
-
-// app.use((req,res,next) => {
-//     res.locals.isAuthenticated = req.session.isLoggedIn;
-//     console.log('app:'+req.session.isLoggedIn)
-//     next();
-// });
 
 app.get('/',(req,res) => {
     sess=req.session;
@@ -45,17 +34,8 @@ app.get('/',(req,res) => {
     res.render('signin',{error: req.query.valid?req.query.valid:'',
                         msg: req.query.msg?req.query.msg:''})
 })
-// app.get('/',(req,res) => {
-//     sess=req.session;
-//     sess.email=" "
-
-//     res.render('signin',
-//       { invalid: req.query.invalid?req.query.invalid:'',
-//         msg: req.query.msg?req.query.msg:''})
-// })
 
 app.post('/api/addContactUs', (req,res)=>{
-  
     console.log("/api/addContactUs : req.body : ", req.body)
     const record = req.body
     Contactuslist.create(
